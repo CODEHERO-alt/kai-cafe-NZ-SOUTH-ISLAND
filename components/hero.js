@@ -1,26 +1,25 @@
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-
-export default function Hero() {
-  return (
-    <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-[#4A90E2] to-[#7ED321]">
-      <Image
-        src="https://images.unsplash.com/photo-1559054663-8b6b5c2b9c9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" // HD cafe exterior
-        alt="Norka's Kai Cafe Exterior"
-        layout="fill"
-        objectFit="cover"
-        className="opacity-50"
-      />
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="text-center text-white z-10"
-      >
-        <h2 className="text-5xl md:text-7xl font-bold mb-4">Welcome to Norka's Kai Cafe</h2>
-        <p className="text-xl md:text-2xl mb-8">Fresh Kiwi flavors with stunning lake views in Te Anau.</p>
-        <a href="#menu" className="bg-[#F5A623] text-white px-8 py-4 rounded-full hover:bg-[#D0021B] transition">View Menu</a>
-      </motion.div>
-    </section>
-  );
+export default function Hero(){
+return (
+<section className="w-full bg-[var(--brand-1)]/5 pb-8">
+<div className="container pt-6 px-4">
+<div className="flex items-start gap-4">
+<div className="flex-1">
+<h2 className="text-2xl font-extrabold">Hello, coffee lover ☕</h2>
+<p className="mt-2 text-gray-700">Pet & boat friendly lakefront cafe — fresh coffee, matcha, smoothies, bagels and gluten-free treats. Sit by the water or takeaway.</p>
+<div className="mt-4 flex gap-3">
+<a href="tel:+642102767057" className="px-4 py-2 rounded-md bg-[var(--brand-2)] font-semibold">Call +64 210 276 7057</a>
+<a href="https://maps.app.goo.gl/" className="px-4 py-2 rounded-md border">Get directions</a>
+</div>
+<ul className="mt-4 text-sm text-gray-600">
+<li><strong>Address:</strong> Queenstown Marina, Sugar Lane, Shed 11, Frankton, Queenstown 9300</li>
+<li><strong>Hours:</strong> Mon–Sun 9:00–16:00 (Public Holidays 10:00–15:00)</li>
+</ul>
+</div>
+<div className="w-36 hidden md:block">
+<img className="rounded-lg hero-float shadow-lg" src="https://norkaskai.co.nz/wp-content/uploads/2023/12/untitled-design-25.png" alt="pattern"/>
+</div>
+</div>
+</div>
+</section>
+)
 }
