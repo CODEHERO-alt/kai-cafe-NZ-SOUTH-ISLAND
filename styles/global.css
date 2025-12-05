@@ -1,18 +1,35 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
+
+:root{
+--brand-1: #0f6b63; /* deep teal */
+--brand-2: #f6c85f; /* warm gold */
+--brand-3: #ffffff; /* white */
+--brand-4: #1f2937; /* dark slate */
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+
+html,body,#__next{height:100%;}
+body{
+font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+background: linear-gradient(180deg,var(--brand-3),#f8fafc);
+color:var(--brand-4);
 }
 
-.fade-in {
-  animation: fadeIn 0.8s ease-out;
+
+/* subtle float animation for hero image */
+@keyframes floaty {0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+.hero-float{animation:floaty 6s ease-in-out infinite}
+
+
+/* utility to subtly reveal sections */
+.reveal{opacity:0;transform:translateY(10px);transition:all .6s ease}
+.reveal.show{opacity:1;transform:none}
+
+
+/* small screen layout adjustments */
+@media(min-width:768px){
+.container{max-width:1024px;margin:0 auto;padding:0 24px}
 }
